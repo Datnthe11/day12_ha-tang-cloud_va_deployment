@@ -33,8 +33,8 @@
 
 ## Part 3: Cloud Deployment
 
-### Exercise 3.1: Railway deployment
-- URL: `https://day12-agent-production.railway.app`
+### Exercise 3.1: Render deployment
+- URL: `https://day12-ha-tang-cloud-va-deployment-i0sw.onrender.com`
 - Screenshot: Xem trong thư mục `screenshots/`
 
 ## Part 4: API Security
@@ -45,7 +45,7 @@
 - Rate Limit Exceeded: Return `429 Too Many Requests` sau khi spam quá số lần cho phép (10 lần/phút).
 
 ### Exercise 4.4: Cost guard implementation
-Logic sử dụng Redis để lưu trạng thái `budget:<user_id>:<month>`. Mỗi lần gọi LLM sẽ tính toán lượng token (input/output) quy đổi ra USD và cộng dồn vào Redis bằng `incrbyfloat`. Khi số tiền lớn hơn 10 USD thì trả về False, API chặn request bằng lỗi `503` (hoặc `402`).
+Logic sử dụng Redis để lưu trạng thái `budget:<user_id>:<month>`. Mỗi lần gọi LLM sẽ tính toán lượng token (input/output) quy đổi ra USD và cộng dồn vào Redis bằng `incrbyfloat`. Khi số tiền lớn hơn giới hạn ngày (5.0 USD) thì trả về False, API chặn request bằng lỗi `503` (hoặc `402`).
 
 ## Part 5: Scaling & Reliability
 
