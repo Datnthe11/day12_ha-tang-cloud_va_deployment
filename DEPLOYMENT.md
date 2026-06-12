@@ -1,34 +1,34 @@
 # Deployment Information
 
 ## Public URL
-https://day12-agent-production.railway.app
+https://day12-ha-tang-cloud-va-deployment-i0sw.onrender.com
 
 ## Platform
-Railway
+Render
 
 ## Test Commands
 
 ### Health Check
 ```bash
-curl https://day12-agent-production.railway.app/health
+curl https://day12-ha-tang-cloud-va-deployment-i0sw.onrender.com/health
 # Expected: {"status": "ok", ...}
 ```
 
 ### API Test (with authentication)
 ```bash
-curl -X POST https://day12-agent-production.railway.app/ask \
-  -H "X-API-Key: my-production-secret-key" \
+curl -X POST https://day12-ha-tang-cloud-va-deployment-i0sw.onrender.com/ask \
+  -H "X-API-Key: dev-key-change-me-in-production" \
   -H "Content-Type: application/json" \
   -d '{"question": "What is stateless design?"}'
 ```
 
 ## Environment Variables Set
-- PORT=8000
-- REDIS_URL=redis://localhost:6379
-- AGENT_API_KEY=my-production-secret-key
-- LOG_LEVEL=INFO
-- RATE_LIMIT_PER_MINUTE=10
-- MONTHLY_BUDGET_USD=10.0
+- ENVIRONMENT=production
+- REDIS_URL=[Redacted]
+- OPENAI_API_KEY=[Redacted]
+- AGENT_API_KEY=[Redacted]
+- RATE_LIMIT_PER_MINUTE=20
+- DAILY_BUDGET_USD=5.0
 
 ## Screenshots
 - [Deployment dashboard](screenshots/dashboard.png)
